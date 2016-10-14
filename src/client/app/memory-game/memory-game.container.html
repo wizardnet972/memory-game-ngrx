@@ -1,0 +1,11 @@
+<div class="card" *ngFor="let card of cards | async;let i = index;" (click)="cardClicked($event, i)">
+
+	<div class="inside" [ngClass]="{'picked': card.picked, 'matched': card.matched }">
+		<div class="front">
+			<img [src]="card.img" [alt]="card.name" />
+		</div>
+		<div class="back">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/codepen-logo.png" alt="Codepen" />
+		</div>
+	</div>
+</div>
