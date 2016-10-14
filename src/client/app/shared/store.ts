@@ -4,15 +4,15 @@ import { storeFreeze } from 'ngrx-store-freeze';
 import { combineReducers } from '@ngrx/store';
 
 import * as fromRouter from '@ngrx/router-store';
-import * as fromAuth from '../auth-ngrx/index';
+
+import * as fromMemory from '../memory-game/memory-game.reducer';
 
 export interface State {
-  auth: fromAuth.State;
   router: fromRouter.RouterState;
 }
 
 const reducers = {
-  auth: fromAuth.reducer,
+  memory: fromMemory.reducer,
   router: fromRouter.routerReducer,
 };
 
