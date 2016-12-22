@@ -1,0 +1,263 @@
+@import url(http://weloveiconfonts.com/api/?family=brandico);/* You can add global styles to this file, and also import other style files */
+
+
+
+/* memory game */
+
+/* UNIVERSAL STYLES */
+/* brandico */
+[class*="brandico-"]:before {
+  font-family: 'brandico', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: black;
+  min-height: 100%;
+  font-family: "Arial", sans-serif;
+}
+
+.wrap {
+  position: relative;
+  height: 100%;
+  min-height: 500px;
+  padding-bottom: 20px;
+}
+
+.game {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 500px;
+          perspective: 500px;
+  min-height: 100%;
+  height: 100%;
+}
+
+@-webkit-keyframes matchAnim {
+  0% {
+    background: #bcffcc;
+  }
+  100% {
+    background: white;
+  }
+}
+
+@keyframes matchAnim {
+  0% {
+    background: #bcffcc;
+  }
+  100% {
+    background: white;
+  }
+}
+.card {
+  float: left;
+  width: 16.66666%;
+  height: 25%;
+  padding: 5px;
+  text-align: center;
+  display: block;
+  -webkit-perspective: 500px;
+          perspective: 500px;
+  position: relative;
+  cursor: pointer;
+  z-index: 50;
+  -webkit-tap-highlight-color: transparent;
+}
+@media (max-width: 800px) {
+  .card {
+    width: 25%;
+    height: 16.666%;
+  }
+}
+.card .inside {
+  width: 100%;
+  height: 100%;
+  display: block;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
+  background: white;
+}
+.card .inside.picked, .card .inside.matched {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+.card .inside.matched {
+  -webkit-animation: 1s matchAnim ease-in-out;
+          animation: 1s matchAnim ease-in-out;
+  -webkit-animation-delay: .4s;
+          animation-delay: .4s;
+}
+.card .front, .card .back {
+  border: 1px solid black;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+.card .front img, .card .back img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  max-height: 100%;
+}
+.card .front {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+@media (max-width: 800px) {
+  .card .front {
+    padding: 5px;
+  }
+}
+@media (max-width: 800px) {
+  .card .back {
+    padding: 10px;
+  }
+}
+
+.modal-overlay {
+  display: none;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modal {
+  display: none;
+  position: relative;
+  width: 500px;
+  height: 400px;
+  max-height: 90%;
+  max-width: 90%;
+  min-height: 380px;
+  margin: 0 auto;
+  background: white;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  padding: 30px 10px;
+}
+.modal .winner {
+  font-size: 80px;
+  text-align: center;
+  font-family: "Anton", sans-serif;
+  color: #4d4d4d;
+  text-shadow: 0px 3px 0 black;
+}
+@media (max-width: 480px) {
+  .modal .winner {
+    font-size: 60px;
+  }
+}
+.modal .restart {
+  font-family: "Anton", sans-serif;
+  margin: 30px auto;
+  padding: 20px 30px;
+  display: block;
+  font-size: 30px;
+  border: none;
+  background: #4d4d4d;
+  background: -webkit-linear-gradient(#4d4d4d, #222);
+  background: linear-gradient(#4d4d4d, #222);
+  border: 1px solid #222;
+  border-radius: 5px;
+  color: white;
+  text-shadow: 0px 1px 0 black;
+  cursor: pointer;
+}
+.modal .restart:hover {
+  background: -webkit-linear-gradient(#222, black);
+  background: linear-gradient(#222, black);
+}
+.modal .message {
+  text-align: center;
+}
+.modal .message a {
+  text-decoration: none;
+  color: #28afe6;
+  font-weight: bold;
+}
+.modal .message a:hover {
+  color: #56c0eb;
+  border-bottom: 1px dotted #56c0eb;
+}
+.modal .share-text {
+  text-align: center;
+  margin: 10px auto;
+}
+.modal .social {
+  margin: 20px auto;
+  text-align: center;
+}
+.modal .social li {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+}
+.modal .social li:last-child {
+  margin-right: 0;
+}
+.modal .social li a {
+  display: block;
+  line-height: 50px;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.modal .social li a.facebook {
+  background: #3b5998;
+}
+.modal .social li a.facebook:hover {
+  background: #4c70ba;
+}
+.modal .social li a.google {
+  background: #D34836;
+}
+.modal .social li a.google:hover {
+  background: #dc6e60;
+}
+.modal .social li a.twitter {
+  background: #4099FF;
+}
+.modal .social li a.twitter:hover {
+  background: #73b4ff;
+}
+
+footer {
+  height: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 0;
+}
+footer .disclaimer {
+  line-height: 20px;
+  font-size: 12px;
+  color: #727272;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  footer .disclaimer {
+    font-size: 8px;
+  }
+}
+/*# sourceMappingURL=styles.bundle.map*/
