@@ -3,13 +3,22 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { DBModule } from '@ngrx/db';
+import { RouterStoreModule } from '@ngrx/router-store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
+
+import { reducer } from '../shared/store';
 import { AppComponent } from './app.component';
 
-import { StoreModule } from '@ngrx/store';
-
-const reducer = (state = {}, action) => {
-  return state;
-};
+const NGRX_IMPORTS = [
+  StoreModule.provideStore(reducer),
+  RouterStoreModule.connectRouter(),
+  StoreDevtoolsModule.instrumentOnlyWithExtension(),
+];
 
 @NgModule({
   declarations: [
@@ -19,7 +28,8 @@ const reducer = (state = {}, action) => {
     BrowserModule,
     FormsModule,
     HttpModule,
-    StoreModule.provideStore({ reducer }),
+    AppRoutingModule,
+    ...NGRX_IMPORTS,
   ],
   providers: [],
   bootstrap: [AppComponent]
