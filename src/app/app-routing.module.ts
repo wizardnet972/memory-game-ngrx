@@ -1,8 +1,8 @@
-import { NgModule }             from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes: Routes = [
-  { path: '', loadChildren: 'app/features/memory-game/memory-game.module#MemoryGameModule' }
+  { path: '', pathMatch: 'full', loadChildren: 'app/features/memory-game/memory-game.module#MemoryGameModule' }
 ];
 
 @NgModule({
@@ -13,4 +13,4 @@ const appRoutes: Routes = [
     RouterModule
   ]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

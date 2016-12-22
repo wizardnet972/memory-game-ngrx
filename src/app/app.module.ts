@@ -14,6 +14,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { reducer } from '../shared/store';
 import { AppComponent } from './app.component';
 
+import { EffectsHelper } from '../shared/effects-helper.service';
+
 const NGRX_IMPORTS = [
   StoreModule.provideStore(reducer),
   RouterStoreModule.connectRouter(),
@@ -31,7 +33,7 @@ const NGRX_IMPORTS = [
     AppRoutingModule,
     ...NGRX_IMPORTS,
   ],
-  providers: [],
+  providers: [EffectsHelper],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
