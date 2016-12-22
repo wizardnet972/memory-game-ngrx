@@ -6,12 +6,12 @@ import { Card } from '../../memory-game/memory-game.model';
 import { State, getCardsEntities, getWinningStatus } from '../../../shared/store';
 
 @Component({
-    selector: 'memory-game',
+    selector: 'app-memory-game',
     templateUrl: './memory-game.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MemoryGameComponent {
-    private cards$: Observable<Card[]>;
+    cards$: Observable<Card[]>;
 
     constructor(
         public store: Store<State>) {

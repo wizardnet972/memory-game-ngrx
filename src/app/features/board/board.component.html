@@ -1,2 +1,2 @@
-<card *ngFor="let card of cards;let i = index;" [card]="card" (cardClicked)="cardClicked($event, i)">
-</card>
+<app-card *ngFor="let card of cards;let i = index;" [card]="card" (cardClicked)="cardClicked($event, i)">
+</app-card>

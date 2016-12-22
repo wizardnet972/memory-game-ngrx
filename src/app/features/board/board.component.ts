@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from 
 import { Card } from '../../memory-game/memory-game.model';
 
 @Component({
-    selector: 'board',
+    selector: 'app-board',
     templateUrl: './board.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -14,7 +14,8 @@ export class BoardComponent {
         let target = (<Element>(event.currentTarget)).children[0];
         let prevent = target.classList.contains('picked') || target.classList.contains('matched');
 
-        if (!prevent)
+        if (!prevent) {
             this.reveal.emit(parseInt(cardIndex, 10));
+        }
     }
 }

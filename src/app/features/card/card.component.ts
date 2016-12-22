@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { Card } from '../../memory-game/memory-game.model';
 
 @Component({
-    selector: 'card',
+    selector: 'app-card',
     templateUrl: './card.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
