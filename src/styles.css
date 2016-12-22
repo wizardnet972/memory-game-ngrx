@@ -3,7 +3,7 @@
 
 @font-face {
     font-family: FromCartoonBlocks;
-    src: url(/assets/From_Cartoon_Blocks.ttf);
+    src: url(assets/From_Cartoon_Blocks.ttf);
 }
 
 /* UNIVERSAL STYLES */
@@ -89,11 +89,14 @@ h1 {
   transform-style: preserve-3d;
   transition: .4s ease-in-out;
   background: beige;
-  box-shadow: 5px 2px 6px -3px black;
+  box-shadow: 5px 2px 6px -3px #444;
   border-radius:14px; 
 }
+
 .card .inside.picked, .card .inside.matched {
   transform: rotateY(180deg);
+  box-shadow: 5px 2px 6px -3px #666 inset;
+  
 }
 .card .inside.matched {
   animation: 1s matchAnim ease-in-out;
