@@ -7,6 +7,7 @@ This app is a memory game. This application utilizes [@ngrx/store](https://githu
 the state of the app; [@ngrx/effects](https://github.com/ngrx/effects) to isolate side effects. 
 
 Built with [angular-cli](https://github.com/angular/angular-cli)
+Built by [@wizardnet972](https://www.github.com/wizardnet972/).
 
 ## Get Started
 ```bash
